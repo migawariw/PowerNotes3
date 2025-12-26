@@ -223,6 +223,10 @@ function showPreview(id,title,content){
 /* ------------------- Navigation / Hash ------------------- */
 window.addEventListener('load', navigate);
 window.addEventListener('hashchange', navigate);
+  document.addEventListener('DOMContentLoaded', async () => {
+  await loadMemos();    // メモ一覧をロード
+  renderRoute();         // 現在のハッシュルートに応じて表示
+});
 
 function navigate(){
   const hash = location.hash;
